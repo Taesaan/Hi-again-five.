@@ -11,21 +11,31 @@
     <h1>To: My Dearest</h1>
     <p class="date">July 5th, 2025</p>
 
-    <div class="letter">
-      <p>Dear Love,</p>
-      <p>
-        Since you came into my life, everything has felt a little brighter and more
-        meaningful in ways i didn’t expect. Being with you brings a kind of calm and
-        happiness that makes even the quiet moments feel full. I still think about how
-        unlikely it was for us to meet, yet somehow we did, and i’ll never stop being
-        grateful for that. Every day i spend with you, i find new things to appreciate and
-        new hopes for the future, not just for myself, but for both of us. I want to keep
-        learning who you are, keep choosing you, and keep hoping for a life that treats
-        us gently. You’re one of the best things that’s ever happened to me, sayang.
-      </p>
-      <p>Love,</p>
-      <p class="signature">Isakh.</p>
-    </div>
+    <div id="letter" class="letter"></div>
+
+    <p class="signature">Isakh.</p>
   </div>
+
+  <script>
+    const text = `Dear Love,
+
+Since you came into my life, everything has felt a little brighter and more meaningful in ways I didn’t expect. Being with you brings a kind of calm and happiness that makes even the quiet moments feel full. I still think about how unlikely it was for us to meet, yet somehow we did, and I’ll never stop being grateful for that. Every day I spend with you, I find new things to appreciate and new hopes for the future, not just for myself, but for both of us. I want to keep learning who you are, keep choosing you, and keep hoping for a life that treats us gently. You’re one of the best things that’s ever happened to me, sayang.
+
+Love,Isakh.`;
+
+    let i = 0;
+    const speed = 35; 
+
+    function typeWriter() {
+      if (i < text.length) {
+        const letterDiv = document.getElementById("letter");
+        letterDiv.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
 </body>
 </html>
